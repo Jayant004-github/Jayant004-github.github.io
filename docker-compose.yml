@@ -1,0 +1,54 @@
+version: '3.8'
+services:
+  php_apache:
+    container_name: php_8.2_apache_container
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - 80:80
+    volumes:
+      - ./my-datavolume:/var/www/html
+    networks:
+      - company_network
+    depends_on:
+      - mysql
+
+  mysql:
+    image: mysql
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: MYSQL_ROOT_PASSWORD
+      MYSQL_DATABASE: MYSQL_DATABASE
+      MYSQL_USER: MYSQL_USER
+      MYSQL_PASSWORD: MYSQL_PASSWORD
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./my-datavolume:/var/lib/mysql  
+    networks:
+      - company_network
+
+  redis:
+    image: redis:7.2.1
+    container_name: redis_7.2.1_container
+    restart: always
+    ports:
+      - 6379:6379
+    networks:
+      - company_network      
+
+  phpmyadmin:
+    image: phpmyadmin:5.2.1
+    container_name: phpmyadmin_container
+    restart: always
+    ports:
+      - 8080:80
+    environment:
+      - PMA_HOST=mysql
+      - PMA_PORT=3306
+    networks:
+      - company_network        
+
+networks:
+  company_network:
