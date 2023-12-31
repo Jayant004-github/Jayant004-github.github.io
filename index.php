@@ -4,7 +4,7 @@
     if(isset($_POST['submit'])){
         $pwd = $_POST['password'];
 
-        $query = "SELECT * FROM CTF WHERE password = '$pwd'";
+        $query = "SELECT * FROM CTF2 WHERE password = '$pwd'";
         $data = mysqli_query($conn, $query);
 
         $total= mysqli_num_rows($data);
@@ -58,12 +58,18 @@
         <p id="encoded-message">1T5V3I70X_0L_N7SR!</p>
         <!-- <p><strong>Decoded Message:</strong></p>
         <p id="decoded-message"></p> -->
-    </div>
+    
     <form action="#" method="POST" autocomplete="off">
-    <input type="password"placeholder="Decoded message" required>
-    <input type="submit">
+    <div class="form-group">
+                <input type="password" class="form-control" name="password" placeholder="Decoded Message">
+            </div>
+            <center>
+            <div class="form-btn">
+                <input type="submit" class="btn btn-primary" value="Submit" name="submit">
+            </div>
+            </center>
     </form>
-
+    </div>
     <p><strong>Challenge Steps:</strong></p>
     <ol>
         <li>Visit the website provided.</li>
