@@ -6,7 +6,7 @@ services:
       context: ./
       dockerfile: Dockerfile
     ports:
-      - 8434:8434
+      - 4678:4678
     volumes:
       - ./my-datavolume:/var/www/html
     networks:
@@ -23,7 +23,7 @@ services:
       MYSQL_USER: USER
       MYSQL_PASSWORD: CTFPASSWORD
     ports:
-      - "20678:20678"
+      - "3306:3306"
     volumes:
       - ./my-datavolume:/var/lib/mysql  
     networks:
@@ -34,7 +34,7 @@ services:
     container_name: redis
     restart: always
     ports:
-      - 20616:20616
+      - 6379:6379
     networks:
       - company_network      
 
@@ -43,10 +43,10 @@ services:
     container_name: phpmyadmin
     restart: always
     ports:
-      - 23967:8434
+      - 8080:80
     environment:
       - PMA_HOST=mysql
-      - PMA_PORT=20678
+      - PMA_PORT=3306
     networks:
       - company_network        
 
