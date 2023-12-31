@@ -55,7 +55,7 @@
 
     <div class="message-container">
         <p><strong>Hidden Message:</strong></p>
-        <p id="encoded-message">cylyz Gsv Xliwv!</p>
+        <p id="encoded-message">1T5V3I70X_0L_N7SR!</p>
         <!-- <p><strong>Decoded Message:</strong></p>
         <p id="decoded-message"></p> -->
     </div>
