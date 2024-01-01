@@ -51,7 +51,7 @@
 </head>
 <body>
     <h1>Welcome to the Source Cipher Challenge!</h1>
-    <p>You've discovered a mysterious webpage with hidden information in its source code. Inspect the source code carefully and uncover the secret message encoded within. The hidden message is protected by a more advanced cryptographic technique. Can you crack the code and reveal the flag?</p>
+    <p>You've discovered a mysterious webpage with hidden information, Unravel the hidden message encrypted in the shadows of this code. Sharpen your cryptographic prowess, decipher the enigma, and unveil the secrets concealed within the digital veil. Inspect the source code carefully and uncover the secret message encoded within. The hidden message is protected by a more advanced cryptographic technique. Can you crack the code and reveal the flag?</p>
 
     <div class="message-container">
         <p><strong>Hidden Message:</strong></p>
@@ -73,7 +73,7 @@
     <p><strong>Challenge Steps:</strong></p>
     <ol>
         <li>Visit the website provided.</li>
-        <li>Inspect the source code to find the encoding function.</li>
+        
         <li>Decode the hidden message to reveal the flag.</li>
         <li>Submit the decoded message as the flag.</li>
     </ol>
