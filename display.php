@@ -8,7 +8,7 @@
 <body>
     Congratulations!! You cracked the Flag.</br>
     Decode the hidden message to reveal the flag. And insert the code.</br>
-    1N5P3C70R_0F_H7ML
+    1N5P3C70R_0F_H7ML</br>
     passwd{insert}
 </body>
 </html>
