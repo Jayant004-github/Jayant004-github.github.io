@@ -4,7 +4,7 @@
     if(isset($_POST['submit'])){
         $pwd = $_POST['password'];
 
-        $query = "SELECT * FROM CTF2 WHERE password = '$pwd'";
+        $query = "SELECT * FROM ctf2 WHERE password = '$pwd'";
         $data = mysqli_query($conn, $query);
 
         $total= mysqli_num_rows($data);
