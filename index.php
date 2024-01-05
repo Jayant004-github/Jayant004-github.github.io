@@ -74,37 +74,48 @@
     <ol>
         <li>Visit the website provided.</li>
         
-        <li>Decode the hidden message to reveal the flag.</li>
+        <li>Decode the hidden message to reveal the message.</li>
+        <li>After revealing the message, with your cryptography poweress decode it further to replace insert.</li> 
         <li>Submit the decoded message as the flag.</li>
     </ol>
 
     <script>
-        // Custom substitution cipher function
-        function decodeMessage(encodedMessage) {
-            // Custom implementation (you can replace this with your own cipher)
-            let decodedMessage = "";
-            for (let i = 0; i < encodedMessage.length; i++) {
-                let charCode = encodedMessage.charCodeAt(i);
-                if (charCode >= 65 && charCode <= 90) { // Uppercase letters
-                    decodedMessage += String.fromCharCode(((charCode - 65 + 23) % 29) + 65);
-                } else if (charCode >= 97 && charCode <= 122) { // Lowercase letters
-                    decodedMessage += String.fromCharCode(((charCode - 97 + 23) % 29) + 97);
-                } else {
-                    decodedMessage += encodedMessage[i];
-                }
-            }
-            return decodedMessage;
-        }
-
-        // Get the encoded message element
-        const encodedMessageElement = document.getElementById('encoded-message');
-        // Get the decoded message element
-        const decodedMessageElement = document.getElementById('decoded-message');
-
-        // Decode the message and display it
-        const encodedMessage = encodedMessageElement.textContent;
-        const decodedMessage = decodeMessage(encodedMessage);
-        decodedMessageElement.textContent = decodedMessage;
+        
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
     </script>
 </body>
 </html>
