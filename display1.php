@@ -7,7 +7,7 @@
 </head>
 <body>
     Congratulations!! You cracked the Flag.</br>
-    Decode the hidden message to reveal the flag. And insert into the given.</br>
+    Decode the hidden message. And replace the word insert to reveal the flag.</br>
     j5_15_7r4n5p4r3n7</br>
     passwd{insert}
 </body>
