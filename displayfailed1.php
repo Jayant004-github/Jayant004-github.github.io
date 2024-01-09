@@ -46,7 +46,7 @@
     username: 
     password: 
     SQL query: SELECT * FROM users WHERE username=&#039 &username &#039 && password=&#039 $password &#039;
-    //' OR 1=1 --
+    
     
 </script>
 </body>
