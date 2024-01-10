@@ -1,4 +1,4 @@
 HINT:
 
-Be a good HTML reader.
-Google may or maynot help.
+1. Be a good HTML reader.
+2. Google may or maynot help.
