@@ -1,2 +1,4 @@
-# Jayant004-github.github.io
-Crack the login to CTF
+HINT:
+
+Be a good HTML reader.
+Google may or maynot help.
