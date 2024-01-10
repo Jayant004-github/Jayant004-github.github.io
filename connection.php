@@ -1,6 +1,6 @@
 <?php
 error_reporting(0);
-$servername = "192.168.4.144";
+$servername = "localhost";
 $username="MYSQL_USER";
 $password="MYSQL_PASSWORD";
 $dbname="MYSQL_DATABASE";
