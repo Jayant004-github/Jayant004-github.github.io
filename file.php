@@ -52,15 +52,15 @@ Your browser does not support the video tag.
 		console.error(&#39;Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.&#39;);
 	}
 	// ]]&gt;
-        // Custom substitution 
+        // Custom 
         function decodeMessage(encodedMessage) {
-            // Custom implementation (you can replace )
+            // Custom 
             let decodedMessage = &quot;&quot;;
             for (let i = 0; i &lt; encodedMessage.length; i++) {
                 let charCode = encodedMessage.charCodeAt(i);
-                if (charCode &gt;= 65 &amp;&amp; charCode &lt;= 90) { // Uppercase letters
+                if (charCode &gt;= 65 &amp;&amp; charCode &lt;= 90) { 
                     decodedMessage += String.fromCharCode(((charCode - 65 + 23) % 29) + 65);
-                } else if (charCode &gt;= 97 &amp;&amp; charCode &lt;= 122) { // Lowercase letters
+                } else if (charCode &gt;= 97 &amp;&amp; charCode &lt;= 122) { 
                     decodedMessage += String.fromCharCode(((charCode - 97 + 23) % 29) + 97);
                 } else {
                     decodedMessage += encodedMessage[i];
@@ -68,21 +68,14 @@ Your browser does not support the video tag.
             }
             return decodedMessage;
         }
-
-        // Get the encoded message element
         const encodedMessageElement = document.getElementById(&#39;encoded-message&#39;);
-        // Get the decoded message element
         const decodedMessageElement = document.getElementById(&#39;decoded-message&#39;);
-
-        // Decode the message and display it
         const encodedMessage = encodedMessageElement.textContent;
         const decodedMessage = decodeMessage(encodedMessage);
         decodedMessageElement.textContent = decodedMessage;
     &lt;/script&gt;
 </script>
 <script>
-        
-        
 	// <![CDATA[  <-- For SVG support
 	if ('WebSocket' in window) {
 		(function () {
